@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  admin:
+    build:
+      context: ./Admin
+    depends_on:
+      postgresdb:
+        condition: service_healthy
+    volumes:
+      - ./admin-data:/app
+    env_file:
+      - ./Admin/.env
+    command: uvicorn main:app --host 0.0.0.0 --port 8082
+
+  postgresdb:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: fastapi_microservice
+      POSTGRES_DATABSE: fastapi_microservice
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-q", "-d", "test", "-U", "postgres"]
+      interval: 10s
+      retries: 5
+
+  redis:
+    image: redis:latest
+    volumes:
+      - ./redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+

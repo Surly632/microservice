@@ -1,0 +1,12 @@
+#python=3.10.10
+fastapi[all]
+uvicorn
+sqlalchemy
+alembic
+python-jose
+aioredis
+aiokafka
+asyncio
+asyncpg
+bcrypt
+python-dotenv

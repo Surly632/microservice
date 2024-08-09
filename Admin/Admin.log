@@ -1,0 +1,8 @@
+2024-04-19 23:34:00 - INFO - server running on port: 8080
+2024-04-19 23:34:33 - INFO - 127.0.0.1:10831 - "POST /login HTTP/1.1" 404
+2024-04-19 23:34:45 - INFO - 127.0.0.1:10835 - "POST /admin/login HTTP/1.1" 422
+2024-04-19 23:35:24 - INFO - 127.0.0.1:10846 - "POST /admin/login HTTP/1.1" 422
+2024-04-19 23:35:29 - INFO - 127.0.0.1:10846 - "POST /admin/login HTTP/1.1" 200
+2024-04-19 23:36:04 - INFO - 127.0.0.1:10852 - "DELETE /admin/logout HTTP/1.1" 403
+2024-04-19 23:36:22 - INFO - 127.0.0.1:10858 - "DELETE /admin/logout HTTP/1.1" 403
+2024-04-19 23:36:34 - INFO - server is shutting down...

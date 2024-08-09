@@ -1,0 +1,11 @@
+fastapi[all]
+uvicorn
+sqlalchemy
+alembic
+python-jose
+aioredis
+aiokafka
+asyncio
+asyncpg
+bcrypt
+python-dotenv
